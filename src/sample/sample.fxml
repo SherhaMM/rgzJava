@@ -6,19 +6,21 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="ancPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #999;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="ancPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: #333;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Text layoutX="256.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчетно графическое задание" textAlignment="CENTER" underline="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c4154" height="232.0" layoutX="32.0" layoutY="495.0" stroke="BLACK" strokeType="INSIDE" width="933.0" />
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="326.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчетнографическое задание" textAlignment="CENTER">
          <font>
-            <Font name="Menlo Regular" size="23.0" />
+            <Font name="Avenir Next Bold" size="23.0" />
          </font>
       </Text>
-      <TextArea fx:id="resultTextField" editable="false" layoutX="16.0" layoutY="106.0" prefHeight="363.0" prefWidth="472.0" />
-      <Button layoutX="800.0" layoutY="655.0" mnemonicParsing="false" onAction="#viewResult" prefHeight="91.0" prefWidth="198.0" text="Рассчитать" />
-      <LineChart fx:id="graphFunc" layoutX="480.0" layoutY="71.0" prefHeight="433.0" prefWidth="500.0" title="Function f(x)">
+      <TextArea fx:id="resultTextField" editable="false" layoutX="17.0" layoutY="76.0" prefHeight="363.0" prefWidth="472.0" />
+      <Button layoutX="752.0" layoutY="615.0" mnemonicParsing="false" onAction="#viewResult" prefHeight="91.0" prefWidth="198.0" text="Рассчитать и показать на графике" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" wrapText="true" />
+      <LineChart fx:id="graphFunc" layoutX="481.0" layoutY="41.0" prefHeight="458.0" prefWidth="500.0" title="Function f(x)">
         <xAxis>
           <NumberAxis side="BOTTOM" />
         </xAxis>
@@ -26,17 +28,28 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <TextField fx:id="textXField" editable="false" layoutX="13.0" layoutY="635.0" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #ccc;" />
-      <Button layoutX="801.0" layoutY="515.0" mnemonicParsing="false" onAction="#clearLineChart" prefHeight="28.0" prefWidth="187.0" style="-fx-background-color: DODGERBLUE;" text="Очистить график">
+      <TextField fx:id="textXField" editable="false" layoutX="54.0" layoutY="615.0" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #ccc;" />
+      <Button layoutX="785.0" layoutY="554.0" mnemonicParsing="false" onAction="#clearLineChart" prefHeight="28.0" prefWidth="140.0" text="Очистить график">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Text layoutX="13.0" layoutY="622.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Значения Х" />
-      <TextField fx:id="textYField" editable="false" layoutX="13.0" layoutY="705.0" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #ccc;" />
-      <Text layoutX="13.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Значения Y" />
-      <Button layoutX="9.0" layoutY="513.0" mnemonicParsing="false" onAction="#getArrays" text="Использовать свои значения" />
-      <Button layoutX="9.0" layoutY="551.0" mnemonicParsing="false" onAction="#clearArrays" prefHeight="36.0" prefWidth="200.0" text="Очистить свои значения" />
-      <Button layoutX="204.0" layoutY="635.0" mnemonicParsing="false" text="Ввести" />
-      <Button layoutX="204.0" layoutY="705.0" mnemonicParsing="false" text="Ввести" />
+      <Text fill="WHITE" layoutX="53.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Значения Х" />
+      <TextField fx:id="textYField" editable="false" layoutX="53.0" layoutY="685.0" prefHeight="27.0" prefWidth="177.0" style="-fx-background-color: #ccc;" />
+      <Text fill="WHITE" layoutX="53.0" layoutY="672.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Значения Y" />
+      <Button layoutX="69.0" layoutY="503.0" mnemonicParsing="false" onAction="#getArrays" text="Использовать свои значения" />
+      <Button layoutX="69.0" layoutY="541.0" mnemonicParsing="false" onAction="#clearArrays" prefHeight="36.0" prefWidth="200.0" text="Очистить массив значений" />
+      <Button layoutX="244.0" layoutY="615.0" mnemonicParsing="false" text="Ввести" />
+      <Button layoutX="244.0" layoutY="685.0" mnemonicParsing="false" text="Ввести" />
+      <Button layoutX="784.0" layoutY="514.0" mnemonicParsing="false" onAction="#clearResults" prefHeight="28.0" prefWidth="140.0" text="Очистить текст">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="346.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Метод наименьших квадратов (МНК)" textAlignment="CENTER">
+         <font>
+            <Font name="Avenir Next Bold" size="17.0" />
+         </font>
+      </Text>
+      <Button layoutX="600.0" layoutY="515.0" mnemonicParsing="false" onAction="#createSplineChart" prefHeight="27.0" prefWidth="161.0" text="Показать сплайн" />
    </children>
 </AnchorPane>

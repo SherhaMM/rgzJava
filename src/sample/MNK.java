@@ -21,7 +21,11 @@ public class MNK {
     public Double getA() {
         return a/det;
     }
+    public Double getB() {
+        return b/det;
+    }
     public String showLists(){
+
         String s="Массив Х: "+new String();
         for (Double d:xList
              ) {
@@ -41,10 +45,6 @@ public class MNK {
 
     public List<Double> getyList() {
         return yList;
-    }
-
-    public Double getB() {
-        return b/det;
     }
     public void clearLists(){
         xList.clear();
@@ -103,7 +103,7 @@ public class MNK {
     }
 
 
-    public String vector(){
+    public String vector(){ //Используя метод Крамера , находим функцию
         det=(xCubeSum*size)-(xSum*xSum);
         // det= |a1 a2|
         //      |b1 b1|
@@ -116,7 +116,7 @@ public class MNK {
         }
         return null;
     }
-    public Double cubeDifference(){
+    public Double cubeDifference(){ //Функция рассчитывает квадратическое отклонение функции
         Double a=getA();
         Double b=getB();
         Double eCube=0.;
